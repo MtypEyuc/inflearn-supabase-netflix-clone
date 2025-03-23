@@ -1,4 +1,4 @@
-import {getMovie} from "actions/movieActions";
+import {getFavoriteMovie, getMovie} from "actions/movieActions";
 import UI from "./ui";
 
 export async function generateMetadata({params, searchParams}){

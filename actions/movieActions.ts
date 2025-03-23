@@ -40,6 +40,19 @@ export async function searchMovies({search, page, pageSize}) {
     };
 }
 
+export async function getFavoriteMovie() {
+    const supabase = await createServerSupabaseClient();
+
+    const { data, error } = await supabase
+        .from("favorite_movie")
+        .select("*")
+        .eq("favorite", true)
+
+    handleError(error);
+
+    return data;
+}
+
 export async function getMovie(id) {
     const supabase = await createServerSupabaseClient();
 
